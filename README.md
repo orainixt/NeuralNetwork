@@ -23,7 +23,7 @@
 - We'll also use ReLU function which is very simple. If x is greater than 0 we return x otherwise we return 0. 
 - Do this for each neuron of the layer, spread it to the n+1 layer etc. 
 
-# Implementing the Torch Algorithm 
+# Implementing the firsts functions (to understand (again!))
 - The code is commented enough, I'll add commentary on the code here later
 - First of all I got this output 
 

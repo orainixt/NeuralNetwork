@@ -40,3 +40,26 @@ logits = model(x) #pass the tensor throught the network. The output is 10 raw pr
 pred_probability = nn.Softmax(dim=1)(logits) #returns the prediction probabilities by passing logits through an instance of an nn.Softmax module
 y_pred = pred_probability.argmax(1)
 print(f"Predicted class : {y_pred}") 
+
+input_image = torch.rand(3,28,28)
+#print(input_image.size()) #used to understand
+
+flatten = nn.Flatten()
+flat_image = flatten(input_image)
+#print(flat_image.size())
+
+first_layer = nn.Linear(in_features=28*28,out_features=20)
+hidden_layer = first_layer(flat_image)
+#print(hidden_layer.size())
+
+#print(f"Before ReLU function {hidden_layer}\n\n")
+hidden_layer = nn.ReLU()(hidden_layer)
+#print(f"After ReLU function {hidden_layer}")
+
+sequential_modules = nn.Sequential(
+    flatten,
+    first_layer,
+    nn.ReLU,
+    nn.Linear(20,10)
+)
+input_image = torch.rand(3,28,28)
