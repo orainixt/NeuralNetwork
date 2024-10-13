@@ -43,5 +43,39 @@ NeuralNetwork(
 - Quickly, we flatten the input image into a 784 elements. The input image is 28*28 px. 
 - Training data are often the sames. 
 
- # Explain nn.Softmax module
- - TODO
+# Rearanging Project in Differents Files 
+
+
+- **data/**: Contains files related to data handling.
+  - `__init__.py`: Marks the directory as a package.
+  - `data_loader.py`: Implements functionality to load and preprocess the dataset.
+
+- **models/**: Contains files that define the neural network models.
+  - `__init__.py`: Marks the directory as a package.
+  - `neural_network.py`: Contains the definition of the neural network architecture.
+
+- **training/**: Contains files that handle the model training process.
+  - `__init__.py`: Marks the directory as a package.
+  - `trainer.py`: Implements the training loop and model evaluation.
+
+- **utils/**: Contains utility functions that can be used throughout the project.
+  - `__init__.py`: Marks the directory as a package.
+  - `utils.py`: Includes various helper functions.
+
+- **venv/**: Contains all files needed to create a venv, with the modules in requirements.txt
+
+- **main.py**: The main entry point of the application, orchestrating data loading, model training, and evaluation.
+
+- **first_neuron.py**: The very first file I created, containing all the first functions
+
+- **requirements.txt**: Lists all the dependencies required to run the project. This file is typically used to install packages using pip.
+
+
+# Explain nn.Softmax module
+- TODO
+
+# Explain Cross Entropy 
+
+# Explain Adam Optimizer 
+
+# Explain DataLoader Creation 
