@@ -26,11 +26,17 @@ class NeuralNetwork(nn.Module): #create a model object containing the layers and
             nn.Linear(512,10), #third layer -> take 512 elts and returns 10 elements (10th first numbers)
         ) 
 
-    def forward(self,x): #define the propagation of the data throught the network x = data
+    def forward(self,x): #define the propagation of the data through the network x = data
         x = self.flatten(x) #flatten the input data  
-        logits = self.linear_relu_stack(x) #pass data throught the differents layers 
+        logits = self.linear_relu_stack(x) #pass data through the differents layers 
         return logits #logits is a vector containing the scores for each class (from 0 to 9)
 
 
 model = NeuralNetwork().to(device) #create an instance of neuralnetwork and pass it to the good cpu
 print(model)
+
+x = torch.rand(1,28,28,device=device) #create a size tensor (1,28,28) filled with random values between 0 and 1
+logits = model(x) #pass the tensor throught the network. The output is 10 raw predicted values for each class 
+pred_probability = nn.Softmax(dim=1)(logits) #returns the prediction probabilities by passing logits through an instance of an nn.Softmax module
+y_pred = pred_probability.argmax(1)
+print(f"Predicted class : {y_pred}") 

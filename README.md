@@ -22,3 +22,26 @@
 - To determine the output we basically take the input, multiply by his weight, add the two inputs multiplied, and add the bias. 
 - We'll also use ReLU function which is very simple. If x is greater than 0 we return x otherwise we return 0. 
 - Do this for each neuron of the layer, spread it to the n+1 layer etc. 
+
+# Implementing the Torch Algorithm 
+- The code is commented enough, I'll add commentary on the code here later
+- First of all I got this output 
+
+```
+Using cpu device
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=784, out_features=512, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=512, out_features=10, bias=True)
+  )
+)
+```
+- Quickly, we flatten the input image into a 784 elements. The input image is 28*28 px. 
+- Training data are often the sames. 
+
+ # Explain nn.Softmax module
+ - TODO
