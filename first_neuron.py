@@ -1,4 +1,4 @@
-import os
+import os 
 import torch
 from torch import nn
 from torch.utils.data import DataLoader
@@ -9,7 +9,7 @@ device = (
     if torch.cuda.is_available() 
     else "mps" #if an apple gpu is avaible -> Metal Perfomance Shaders
     if torch.backends.mps.is_available()
-    else "cpu" #else using a generic gpu
+    else "cpu" #else using a generic cpu
 )
 
 print(f"Using {device} device")
@@ -38,28 +38,42 @@ print(model)
 x = torch.rand(1,28,28,device=device) #create a size tensor (1,28,28) filled with random values between 0 and 1
 logits = model(x) #pass the tensor throught the network. The output is 10 raw predicted values for each class 
 pred_probability = nn.Softmax(dim=1)(logits) #returns the prediction probabilities by passing logits through an instance of an nn.Softmax module
-y_pred = pred_probability.argmax(1)
+y_pred = pred_probability.argmax(1) #prediction probabilities
 print(f"Predicted class : {y_pred}") 
 
-input_image = torch.rand(3,28,28)
+input_image = torch.rand(3,28,28) #take 3 images of size 28*28 and spread it through the network 
 #print(input_image.size()) #used to understand
 
 flatten = nn.Flatten()
-flat_image = flatten(input_image)
+flat_image = flatten(input_image) #flatten the image to a contiguous array of 784 px values
 #print(flat_image.size())
 
-first_layer = nn.Linear(in_features=28*28,out_features=20)
-hidden_layer = first_layer(flat_image)
+first_layer = nn.Linear(in_features=28*28,out_features=20) #linear transformation on the input
+hidden_layer = first_layer(flat_image) #with stored bias & weights 
 #print(hidden_layer.size())
 
 #print(f"Before ReLU function {hidden_layer}\n\n")
-hidden_layer = nn.ReLU()(hidden_layer)
+hidden_layer = nn.ReLU()(hidden_layer) #ReLU function 
 #print(f"After ReLU function {hidden_layer}")
 
-sequential_modules = nn.Sequential(
+sequential_modules = nn.Sequential( #the data is spread as it's defined in sequential_modules
     flatten,
     first_layer,
     nn.ReLU,
     nn.Linear(20,10)
 )
+
 input_image = torch.rand(3,28,28)
+logits = (input_image) #logits - raw values in [-infinity, infinity] 
+
+softmax = nn.Softmax(dim=1) #nn.Softmax module - dim parameter indicates the dimension along which the values must sum to 1.
+pred_probability = softmax(logits) #
+
+
+#layers are parameterized by weights and bias optimized during training process 
+#nn.Module tracks all those fields. Each parameter print its size and a preview of its values
+
+print(f"Model structure: {model}\n\n")
+
+for name, param in model.named_parameters():
+    print(f"Layer: {name} | Size: {param.size()} | Values : {param[:2]} \n")
