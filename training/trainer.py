@@ -38,3 +38,4 @@ def evaluate_model(model,test_loader,device='cpu'):
             total += y.size(0)
     accuracy = correct / total 
     print(f"Accuracy : {accuracy:.2f}")
+

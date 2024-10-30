@@ -4,14 +4,14 @@ from torch.utils.data import DataLoader
 from torchvision.transforms import ToTensor
 
 def load_data(batch_size=64):
-    training_data = datasets.FashionMNIST(
+    training_data = datasets.MNIST(
     root='data', #path where the train/test data is stored
     train=True,  #true ? test : train 
     download=True, #dwd from internet if not avalible in root
     transform=ToTensor(),    
     )
 
-    test_data = datasets.FashionMNIST(
+    test_data = datasets.MNIST(
     root='data',
     train=False,
     download=True,
