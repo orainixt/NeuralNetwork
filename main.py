@@ -24,7 +24,7 @@ if os.path.exists('mnist_model.pth') :
     model.load_state_dict(torch.load('mnist_model.pth')) 
     print("Model load from 'mnist_model.pth'") 
 else : 
-    train_model(model, train_loader, loss_function, optimizer, num_epochs=10, device=device)
+    train_model(model, train_loader, loss_function, optimizer, device=device)
     torch.save(model.state_dict(),'mnist_model.pth')
     print("Model trained et saved to 'mnist_model.pth'")
         

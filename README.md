@@ -74,7 +74,9 @@ NeuralNetwork(
 # Explain nn.Softmax module
 - TODO
 
-# Explain Cross Entropy 
+# Explain Cross Entropy And Loss Function
+
+- Please take a look at the ![PDF](./NeuralNetwork.pdf)
 
 # Explain Adam Optimizer 
 
