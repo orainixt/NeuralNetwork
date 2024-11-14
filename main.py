@@ -16,8 +16,8 @@ device = ( #check which device to use
 train_loader, test_loader = load_data()
 
 #instanciate model, loss function and Adam optimizer
-model = NeuralNetwork().to(device)
-loss_function = torch.nn.CrossEntropyLoss()
+model = NeuralNetwork().to(device) 
+loss_function = torch.nn.CrossEntropyLoss() 
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
 if os.path.exists('mnist_model.pth') :

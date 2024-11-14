@@ -23,6 +23,17 @@
 - We'll also use ReLU function which is very simple. If x is greater than 0 we return x otherwise we return 0. 
 - Do this for each neuron of the layer, spread it to the n+1 layer etc. 
 
+# How to use it 
+- If you don't have the venv files
+```
+$ python3 -m venv venv
+$ source venv/bin/activate
+```
+- Install all the needed packages 
+```
+$ pip install -r requirements.txt 
+```
+
 # Implementing the firsts functions (to understand (again!))
 - The code is commented enough, I'll add commentary on the code here later
 - First of all I got this output 
@@ -71,12 +82,16 @@ NeuralNetwork(
 - **requirements.txt**: Lists all the dependencies required to run the project. This file is typically used to install packages using pip.
 
 
+# Left to do 
+- Doc
+- LaTeX pdf (in progress)
+
 # Explain nn.Softmax module
 - TODO
 
 # Explain Cross Entropy And Loss Function
 
-- Please take a look at the ![PDF](./NeuralNetwork.pdf)
+- Please take a look at the [PDF](./NeuralNetwork.pdf)
 
 # Explain Adam Optimizer 
 
