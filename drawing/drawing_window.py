@@ -1,12 +1,12 @@
 import tkinter as tk 
-from tkinter import fialedialog
+from tkinter import filedialog
 from PIL import Image, ImageDraw
 
 class DrawingApp : 
 
     def __init__(self,root):
         self.root = root 
-        self.root.title("Draw a Number ")
+        self.root.title("Draw a Number :")
         #parameter of the canvas
         self.canvas_width = 1280 
         self.canvas_height = 720 
@@ -19,27 +19,27 @@ class DrawingApp :
         self.last_x = None 
         self.last_y = None 
 
-        def save_to_start(self,event):
+    def save_to_start(self,event):
+        """
+        Function used to save the last position of x and y when user start drawing
             """
-            Function used to save the last position of x and y when user start drawing
-            """
-            self.last_x = event.x 
-            self.last_y = event.y
+        self.last_x = event.x 
+        self.last_y = event.y
 
-        def draw_line(self, event): 
-            """
-            Function used to draw a line between 
-            """
-            #check if there is valid coordinates
-            if self.last_x and self.last_y: 
-                x = event.x
-                y = event.y
-                self.canvas.create_line(self.last_x,self.last_y,x,y,width=2,fill="black",capstyle=tk.ROUND,smooth=True)
-                self.draw.line([self.last_x,self.last_y,x,y],fill="black",width=2)
-                self.last_x = x 
-                self.last_y = y
+    def draw_line(self, event): 
+        """
+        Function used to draw a line between 
+        """
+        #check if there is valid coordinates
+        if self.last_x and self.last_y: 
+            x = event.x
+            y = event.y
+            self.canvas.create_line(self.last_x,self.last_y,x,y,width=2,fill="black",capstyle=tk.ROUND,smooth=True)
+            self.draw.line([self.last_x,self.last_y,x,y],fill="black",width=2)
+            self.last_x = x 
+            self.last_y = y
         
-        def stop_drawing(self, event):
+    def stop_drawing(self, event):
         self.last_x = None
         self.last_y = None
 

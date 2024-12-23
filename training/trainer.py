@@ -1,5 +1,11 @@
 import torch
 
+#model: the model we want to train
+#train_loader: a DataLoader loader object which provides the training data
+#loss_function: 
+#optimizer:
+#nb_epochs:
+#device:
 def train_model(model,train_loader,loss_function,optimizer,nb_epochs=10,device='cpu'):
     for epoch in range(nb_epochs):
         print(f"Epoch {epoch+1}\n-------------------")
