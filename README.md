@@ -1,27 +1,44 @@
 # This is a project where I try to understand how a basic neural network is created 
 
 # Introduction : 
-- First of all, I randomly saw those videos on youtube : https://www.youtube.com/watch?v=DQ0lCm0J3PM / https://youtu.be/cAkMcPfY_Ns?si=iUUTHvFgFkVngtIy
-- The creator explained very well how a neural network works. And as it was made on Minecraft with redstone I could understand quite easily. 
-- After this I jumped to this video : https://www.youtube.com/watch?v=aircAruvnKk&t=303s (the minecraft creator refered to this video for his own creation). 
-- After seeing that video I was quite excited about this very new algorithms (to me). 
+
+I randomly came across these videos on youtube : [**I Made an AI with just Redstone!**](https://www.youtube.com/watch?v=DQ0lCm0J3PM) / [**I Built a Neural Network from Scratch**](https://youtu.be/cAkMcPfY_Ns?si=iUUTHvFgFkVngtIy)
+
+The creator explained very well how a neural network works. And as it was made in Minecraft with redstone I found it easy to understand. 
+
+After this I watched this video : [**But what is a neural network?**](https://www.youtube.com/watch?v=aircAruvnKk&t=303s) (the minecraft creator referenced this video for his own creation).
+
+After seeing it, I became really excited about these algorithms, which were completely new to me.
 
 ## First Touch : 
-- First of all, I searched for onlines tutorials to create my own neural network. 
-- I saw tutorials using Perceptron but this algorithm don't use back propagation, which is one of my favorite "trick" when I saw the video. 
-- So I searched again and found a PyTorch tutorial, which I'm going to follow (for now) 
-- My knowledge at this point is : 
-    - We have inputs. Inputs spreads to the neural network by passing from a layer to an other using maths functions. 
-    - At the end of the network they're outputs, which will represent the answer of the neural network (when it'll be trained). 
-    - Speeking of training : To train our network we need to use a bank of data which are labelled. We're gonna spread the data through the network, it'll fail, but because data are labelled it'll know what it should have answer, to be more precise, *which* neuronal path is the best to give the correct answer. 
-    - It'll adjust the parameters of the maths functions between the layers, depending on a learning rate. I must confess that I don't understand why we can't just put it at max level but I'm sure I'll understand this fast. 
+I started by looking for online tutorials to create my own neural network.
+
+I found tutorials about Perceptron, but this algorithm doesn't use backpropagation, which was one of my favorite "tricks" mentioned in the video.
+
+So, I searched again and found a PyTorch tutorial, which I plan to follow for now.
+
+My understanding at this point is : 
+
+  - We have inputs. These inputs are passed through the neural network, layer by layer, using mathematical functions.
+  - At the end of the network, we get outputs that represent the network's answers (once it's trained).
+  - **Training**: To train the network, we need a labeled dataset. The data is passed through the network, and initially, it will fail to give the correct answers. However, because the data is labeled, the network can "know" what the correct answer should have been. This helps it adjust and figure out which neuronal path is best to produce the correct answer.
+  - It adjusts the parameters of the mathematical functions between the layers, based on a learning rate. I don’t fully understand why we can’t just set the learning rate to its maximum, but I’m sure I’ll figure this out soon.
 
 ## The Maths Functions : 
-- Basically, a neuron is two inputs and an output. 
-- Each input has a weight, each neuron has a bias. 
-- To determine the output we basically take the input, multiply by his weight, add the two inputs multiplied, and add the bias. 
-- We'll also use ReLU function which is very simple. If x is greater than 0 we return x otherwise we return 0. 
-- Do this for each neuron of the layer, spread it to the n+1 layer etc. 
+
+Essentially, a neuron has two inputs and one output.
+Each input has a weight, and each neuron has a bias.
+
+To determine the output, we:
+- Take each input and multiply it by its weight.
+- Add these products together.
+- Add the neuron’s bias to this sum. 
+$$ 
+  \text{Output} = (w_1 \cdot x_1) + (w_2 \cdot x_2) + b 
+$$  
+We also use the ReLU (Rectified Linear Unit) function.
+
+This process is repeated for every neuron in the layer, and the results are passed to the next layer, and so on.
 
 # How to use it 
 - If you don't have the venv files

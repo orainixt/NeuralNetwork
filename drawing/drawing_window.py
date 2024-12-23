@@ -18,6 +18,12 @@ class DrawingApp :
         #x/y-axis to handle mouse 
         self.last_x = None 
         self.last_y = None 
+        #save button 
+        save_button = tk.Button(root,text="Save File",command=self.save_image)
+        #binding controls 
+        self.canvas.bind("<Button-1>",self.save_to_start) 
+        self.canvas.bind("<B1-Motion>",self.draw_line) 
+        self.canvas.bing("<ButtonRealease-1>",self.stop_drawing)
 
     def save_to_start(self,event):
         """
