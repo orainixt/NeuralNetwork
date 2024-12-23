@@ -23,7 +23,7 @@ class DrawingApp :
         #binding controls 
         self.canvas.bind("<Button-1>",self.save_to_start) 
         self.canvas.bind("<B1-Motion>",self.draw_line) 
-        self.canvas.bing("<ButtonRealease-1>",self.stop_drawing)
+        self.canvas.bind("<ButtonRelease-1>",self.stop_drawing)
 
     def save_to_start(self,event):
         """
