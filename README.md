@@ -1,5 +1,8 @@
 # This is a project where I try to understand how a basic neural network is created 
 
+# Files 
+[**Explanatory PDF**](./NeuralNetwork.pdf)
+
 # Introduction : 
 
 I randomly came across these videos on youtube : [**I Made an AI with just Redstone!**](https://www.youtube.com/watch?v=DQ0lCm0J3PM) / [**I Built a Neural Network from Scratch**](https://youtu.be/cAkMcPfY_Ns?si=iUUTHvFgFkVngtIy)
